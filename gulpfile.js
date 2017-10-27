@@ -10,7 +10,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
-  lec = require('gulp-line-ending-corrector');
+  lec = require('gulp-line-ending-corrector'),
   chalk = require('chalk');
 
 /**
@@ -262,6 +262,16 @@ gulp.task('patternlab:connect', gulp.series(function (done) {
   });
 }));
 
+
+gulp.task('inline-css', function(){
+	var gulp = require('gulp'),
+	    inlineCss = require('gulp-inline-css');
+	 
+	    return gulp.src('./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html')
+	        .pipe(inlineCss())
+	        .pipe(gulp.dest('./public/patterns/05-emails-order-order-confirmation/'));
+});
+
 gulp.task('styles', function () {
   return gulp.src('./source/css/sass/**/*.sass')
     .pipe(sass({
@@ -285,6 +295,7 @@ function handleError(err) {
   console.log(err.toString());
   process.exit(-1)
 }
+
 
 /******************************************************
  * COMPOUND TASKS

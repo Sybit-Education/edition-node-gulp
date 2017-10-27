@@ -1,3 +1,311 @@
-.spacer{clear:both;font-size:0;line-height:0;display:block;height:20px}body{Margin:0;padding:0 0 10px 0;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;line-height:16px;color:#41535d;background:white;text-align:center}table tr td{text-align:left}.header{width:577px;border-bottom:3px #41535d solid;height:58px;Margin-bottom:0;Margin-top:0}.headerLogo{height:58px;line-height:0px}.headerLogoSignet img{Margin-left:20px}.headerLogoName img{Margin-left:10px;Margin-right:0}.headerLogoSpange{text-align:right}.headerLogoSpange img{Margin-left:0;Margin-right:20px}#container{width:577px;background:#FFF;Margin:0 auto;text-align:left}#container-td{padding:0;vertical-align:top}#inhalt{width:100%}#inhalt td{padding-bottom:0;padding-top:0}.left{text-align:left}.right,#bar-right{text-align:right}#bar-left a{color:#FFF;text-decoration:none}#bar-right{text-align:right}#bar-right a{color:#FFF;text-decoration:none}#begruessung{font-size:18px;line-height:24px;text-align:left;padding:20px !important}#ausgabe{padding:0 20px 20px 20px !important}.einleitung{padding:0 15px 36px 15px !important}#themen{background:#999999;color:#FFF;font-weight:bold;padding:10px 0 0 0}#themen a{color:#FFF}#thema td{background:#28b4dc;padding:1px 22px 3px 14px;color:#FFF;font-weight:bold}.content{background:#ececec;border-top:1px solid #28b4dc;padding:15px}.abstand{height:10px;line-height:10px;font-size:10px}table.imgleft td{padding:0 10px 10px 0}table.imgright td{padding:0 0 10px 10px}table.imgleft img,table.imgright img{border:1px solid #4d4d4d}.impressum{background:#28b4dc;color:#FFF;padding:6px 15px 15px 15px !important;border-bottom:1px solid #FFF;font-size:10px;line-height:14px}.impressum a{color:#FFF}#htmlversion{padding-bottom:0 !important;height:30px;background:#41535d;font-size:10px;color:#fff;text-align:center}#htmlversion a{color:#fff;text-decoration:underline}#sb-container{display:none}.newsletter_bild_text{border-top:3px solid #41535d;padding-bottom:20px}.newsletter_bild_text .bild{vertical-align:top;width:180px;padding-top:24px;padding-left:20px}.newsletter_bild_text .text{vertical-align:top;padding-top:20px;padding-left:20px}.tableheader{background:#41535d;color:white;padding-left:20px}.text-einspaltig .tableheader{height:40px}.text-zweispaltig .tableheader{height:60px}.tableheadline{font-size:18px;line-height:24px;text-transform:uppercase}.tablesubheadline{font-size:12px;line-height:16px;text-transform:capitalize}.textbox{padding:20px;vertical-align:top}.textboxsmall{padding-left:10px;padding-right:10px;padding-top:20px;padding-bottom:20px;vertical-align:top}.textboxheader{font-size:18px;line-height:18px;padding-bottom:10px}.textboxplaintext{font-size:12px;line-height:16px}.textboxplaintext a{text-decoration:underline;color:#41535d}#footer{border-top:3px solid #41535d}#footer a{color:#41535d}#footer td{padding-left:20px;padding-bottom:20px}#footer_nav{padding:0 !important;text-align:center;height:60px;background:#41535d;Color:White;font-weight:bold;text-transform:uppercase}#footer_nav a{color:white;text-decoration:none}#footer #unsubscribe{text-align:center;font-size:10px;padding-top:10px}ul{list-style:none;Margin-left:0;padding-left:22px}ul>li:before{display:inline-block;content:">";width:16px;Margin-left:-20px;font-size:12px;font-weight:bold;line-height:24px}.infobox{background:#ededed}.infobox .textbox{padding:0;padding-bottom:20px !important}.infoboxButton{width:32px;height:32px;text-align:center;background:#41535d;color:white;line-height:25px;font-weight:bold;padding:0 11px}.infoboxButtonText{text-align:left;padding:0 10px 0 10px;background:white;color:#41535d;white-space:nowrap;font-weight:bold;font-size:11px}.infoboxButtonText a{color:#41535d;text-decoration:none;padding:8px 0}.teaserbox_zweispaltig_dark .infobox,.teaserbox_dreispaltig_dark .infobox{background:#41535d;color:white}.teaserbox_zweispaltig_dark .infoboxButtonText,.teaserbox_dreispaltig_dark .infoboxButtonText{background:#41535d;color:white;padding:0;font-weight:normal;font-size:12px}.teaserbox_zweispaltig_dark .infoboxButtonText a,.teaserbox_dreispaltig_dark .infoboxButtonText a{color:white;text-decoration:underline;padding:0}.teaserbox_zweispaltig_dark .textboxplaintext a,.teaserbox_dreispaltig_dark .textboxplaintext a{text-decoration:underline;color:white}
-
+.spacer {
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    height: 20px
+}
+body {
+    Margin: 0;
+    padding: 0 0 10px 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #41535d;
+    background: white;
+    text-align: center
+}
+table tr td {
+    text-align: left
+}
+.header {
+    width: 577px;
+    border-bottom: 3px #41535d solid;
+    height: 58px;
+    Margin-bottom: 0;
+    Margin-top: 0
+}
+.headerLogo {
+    height: 58px;
+    line-height: 0px
+}
+.headerLogoSignet img {
+    Margin-left: 20px
+}
+.headerLogoName img {
+    Margin-left: 10px;
+    Margin-right: 0
+}
+.headerLogoSpange {
+    text-align: right
+}
+.headerLogoSpange img {
+    Margin-left: 0;
+    Margin-right: 20px
+}
+#container {
+    width: 577px;
+    background: #FFF;
+    Margin: 0 auto;
+    text-align: left
+}
+#container-td {
+    padding: 0;
+    vertical-align: top
+}
+#inhalt {
+    width: 100%
+}
+#inhalt td {
+    padding-bottom: 0;
+    padding-top: 0
+}
+.left {
+    text-align: left
+}
+.right,
+#bar-right {
+    text-align: right
+}
+#bar-left a {
+    color: #FFF;
+    text-decoration: none
+}
+#bar-right {
+    text-align: right
+}
+#bar-right a {
+    color: #FFF;
+    text-decoration: none
+}
+#begruessung {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    padding: 20px !important
+}
+#ausgabe {
+    padding: 0 20px 20px 20px !important
+}
+.einleitung {
+    padding: 0 15px 36px 15px !important
+}
+#themen {
+    background: #999999;
+    color: #FFF;
+    font-weight: bold;
+    padding: 10px 0 0 0
+}
+#themen a {
+    color: #FFF
+}
+#thema td {
+    background: #28b4dc;
+    padding: 1px 22px 3px 14px;
+    color: #FFF;
+    font-weight: bold
+}
+.content {
+    background: #ececec;
+    border-top: 1px solid #28b4dc;
+    padding: 15px
+}
+.abstand {
+    height: 10px;
+    line-height: 10px;
+    font-size: 10px
+}
+table.imgleft td {
+    padding: 0 10px 10px 0
+}
+table.imgright td {
+    padding: 0 0 10px 10px
+}
+table.imgleft img,
+table.imgright img {
+    border: 1px solid #4d4d4d
+}
+.impressum {
+    background: #28b4dc;
+    color: #FFF;
+    padding: 6px 15px 15px 15px !important;
+    border-bottom: 1px solid #FFF;
+    font-size: 10px;
+    line-height: 14px
+}
+.impressum a {
+    color: #FFF
+}
+#htmlversion {
+    padding-bottom: 0 !important;
+    height: 30px;
+    background: #41535d;
+    font-size: 10px;
+    color: #fff;
+    text-align: center
+}
+#htmlversion a {
+    color: #fff;
+    text-decoration: underline
+}
+#sb-container {
+    display: none
+}
+.newsletter_bild_text {
+    border-top: 3px solid #41535d;
+    padding-bottom: 20px
+}
+.newsletter_bild_text .bild {
+    vertical-align: top;
+    width: 180px;
+    padding-top: 24px;
+    padding-left: 20px
+}
+.newsletter_bild_text .text {
+    vertical-align: top;
+    padding-top: 20px;
+    padding-left: 20px
+}
+.tableheader {
+    background: #41535d;
+    color: white;
+    padding-left: 20px
+}
+.text-einspaltig .tableheader {
+    height: 40px
+}
+.text-zweispaltig .tableheader {
+    height: 60px
+}
+.tableheadline {
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase
+}
+.tablesubheadline {
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: capitalize
+}
+.textbox {
+    padding: 20px;
+    vertical-align: top
+}
+.textboxsmall {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: top
+}
+.textboxheader {
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 10px
+}
+.textboxplaintext {
+    font-size: 12px;
+    line-height: 16px
+}
+.textboxplaintext a {
+    text-decoration: underline;
+    color: #41535d
+}
+#footer {
+    border-top: 3px solid #41535d
+}
+#footer a {
+    color: #41535d
+}
+#footer td {
+    padding-left: 20px;
+    padding-bottom: 20px
+}
+#footer_nav {
+    padding: 0 !important;
+    text-align: center;
+    height: 60px;
+    background: #41535d;
+    Color: White;
+    font-weight: bold;
+    text-transform: uppercase
+}
+#footer_nav a {
+    color: white;
+    text-decoration: none
+}
+#footer #unsubscribe {
+    text-align: center;
+    font-size: 10px;
+    padding-top: 10px
+}
+ul {
+    list-style: none;
+    Margin-left: 0;
+    padding-left: 22px
+}
+ul>li:before {
+    display: inline-block;
+    content: ">";
+    width: 16px;
+    Margin-left: -20px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px
+}
+.infobox {
+    background: #ededed
+}
+.infobox .textbox {
+    padding: 0;
+    padding-bottom: 20px !important
+}
+.infoboxButton {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    background: #41535d;
+    color: white;
+    line-height: 25px;
+    font-weight: bold;
+    padding: 0 11px
+}
+.infoboxButtonText {
+    text-align: left;
+    padding: 0 10px 0 10px;
+    background: white;
+    color: #41535d;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 11px
+}
+.infoboxButtonText a {
+    color: #41535d;
+    text-decoration: none;
+    padding: 8px 0
+}
+.teaserbox_zweispaltig_dark .infobox,
+.teaserbox_dreispaltig_dark .infobox {
+    background: #41535d;
+    color: white
+}
+.teaserbox_zweispaltig_dark .infoboxButtonText,
+.teaserbox_dreispaltig_dark .infoboxButtonText {
+    background: #41535d;
+    color: white;
+    padding: 0;
+    font-weight: normal;
+    font-size: 12px
+}
+.teaserbox_zweispaltig_dark .infoboxButtonText a,
+.teaserbox_dreispaltig_dark .infoboxButtonText a {
+    color: white;
+    text-decoration: underline;
+    padding: 0
+}
+.teaserbox_zweispaltig_dark .textboxplaintext a,
+.teaserbox_dreispaltig_dark .textboxplaintext a {
+    text-decoration: underline;
+    color: white
+}
 /*# sourceMappingURL=email.css.map */
