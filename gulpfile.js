@@ -7,6 +7,10 @@ var gulp = require('gulp'),
   path = require('path'),
   browserSync = require('browser-sync').create(),
   argv = require('minimist')(process.argv.slice(2)),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  sourcemaps = require('gulp-sourcemaps'),
+  lec = require('gulp-line-ending-corrector');
   chalk = require('chalk');
 
 /**
@@ -257,6 +261,30 @@ gulp.task('patternlab:connect', gulp.series(function (done) {
     done();
   });
 }));
+
+gulp.task('styles', function () {
+  return gulp.src('./source/css/sass/**/*.sass')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    })
+      .on('error', handleError))
+    .pipe(autoprefixer({
+      browsers: [
+        '> 1%',
+        'last 2 versions'
+      ],
+      cascade: false
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('.'))
+    .pipe(lec({verbose:true, eolc: 'LF', encoding:'utf8'}))
+    .pipe(gulp.dest('./source/css'))
+});
+
+function handleError(err) {
+  console.log(err.toString());
+  process.exit(-1)
+}
 
 /******************************************************
  * COMPOUND TASKS

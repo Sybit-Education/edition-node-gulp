@@ -1,0 +1,37 @@
+{{# orderOptions}}
+  <div class="order-options">
+    <p class="order-options__group order-options__address">
+      <em class="order-options__label">{{i18n.deliveryAdress}}:</em>
+      <span class="order-options__text">{{{deliveryAdress}}}</span>
+    </p>
+    <div class="order-options__delivery">
+      <p class="order-options__group">
+        <em class="order-options__label">{{i18n.deliveryType}}:</em>
+        <span class="order-options__text">{{deliveryType}}</span>
+      </p>
+      <p class="order-options__group">
+        <em class="order-options__label">{{i18n.costCenter}}:</em>
+        <span class="order-options__text">{{costCenter}}</span>
+      </p>
+      <p class="order-options__group">
+        <em class="order-options__label">{{i18n.internalOrder}}:</em>
+        <span class="order-options__text">{{internalOrder}}</span>
+      </p>
+      <p class="order-options__group">
+        <em class="order-options__label">{{i18n.partialDelivery}}:</em>
+        {{# partialDeliveryBoolean}}
+          <span class="order-options__text">{{i18n.yes}}</span>
+        {{/partialDeliveryBoolean}}
+        {{^ partialDeliveryBoolean}}
+          <span class="order-options__text">{{i18n.no}}</span>
+        {{/partialDeliveryBoolean}}
+      </p>
+    </div>
+    {{# hasMessageBoolean}}
+      <p class="order-options__group order-options__message">
+        <em class="order-options__label">{{i18n.message}}:</em>
+        <span class="order-options__text">{{message}}</span>
+      </p>
+    {{/hasMessageBoolean}}
+  </div>
+{{/orderOptions}}

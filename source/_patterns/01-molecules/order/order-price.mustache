@@ -1,0 +1,23 @@
+<div class="order-price">
+  <table>
+    <tbody>
+    <tr>
+      <th>{{i18n.priceTotalWithoutTaxes}}</th>
+      <td><em>{{priceWithoutTaxes}}</em></td>
+    </tr>
+    <tr>
+      <th>{{i18n.taxes}}</th>
+      <td>{{taxes}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th>{{i18n.priceTotalIncludingTaxes}}</th>
+      <td><em>{{priceIncludingTaxes}}</em></td>
+    </tr>
+    </tfoot>
+  </table>
+  <p class="order-price__legend">
+    {{i18n.shippingCosts}}
+  </p>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+  <title>{{email.orderconfirmation.title}}</title>
+  {{> molecules-email-styles-wirtgen}}
+</head>
+<body>
+<table id="container" cellspacing="0" cellpadding="0">
+  <tbody>
+  <tr>
+    <td id="container-td">
+      <table id="inhalt" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+          <td>
+            {{> molecules-email-header}}
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tbody>
+              <tr>
+                <td id="bar-right">{{i18n.email.orderconfirmation.title}}</td>
+              </tr>
+              <tr>
+                <td id="begruessung">{{email.salutation}}</td>
+              </tr>
+              <tr>
+                <td id="ausgabe">{{email.orderconfirmation.orderinfos}}</td>
+              </tr>
+              </tbody>
+            </table>
+            {{> molecules-order-price-email }}
+
+            {{#vendorOrders}}
+              {{> molecules-email-vendor-order }}
+            {{/vendorOrders}}
+
+            {{> molecules-email-signature}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
