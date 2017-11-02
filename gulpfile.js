@@ -11,8 +11,10 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
   lec = require('gulp-line-ending-corrector'),
+  mail = require('gulp-mail'),
   chalk = require('chalk');
 
+  
 /**
  * Normalize all paths to be plain, paths with no leading './',
  * relative to the process root, and with backslashes converted to
@@ -267,13 +269,13 @@ gulp.task('inline-css', function(){
 	var gulp = require('gulp'),
 	    inlineCss = require('gulp-inline-css');
 	 
-	    return gulp.src('./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html')
+	    return gulp.src(path.resolve(paths().public.emailSrc))
 	        .pipe(inlineCss())
-	        .pipe(gulp.dest('./public/patterns/05-emails-order-order-confirmation/'));
+	        .pipe(gulp.dest(path.resolve(paths().public.emailDest)));
 });
 
 gulp.task('styles', function () {
-  return gulp.src('./source/css/sass/**/*.sass')
+  return gulp.src(path.resolve(paths().source.styleSrc))
     .pipe(sass({
       outputStyle: 'compressed'
     })
@@ -288,7 +290,20 @@ gulp.task('styles', function () {
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('.'))
     .pipe(lec({verbose:true, eolc: 'LF', encoding:'utf8'}))
-    .pipe(gulp.dest('./source/css'))
+    .pipe(gulp.dest(path.resolve(paths().source.styleDest)))
+});
+
+
+gulp.task('mail', function () {
+  return gulp.src(path.resolve(paths().public.emailSrc))
+    .pipe(mail({
+      subject: config.emailSubject,
+      to: [
+        config.emailTo
+      ],
+      from: config.emailFrom,
+      smtp: config.smtpInfo
+    }));
 });
 
 function handleError(err) {
@@ -303,3 +318,4 @@ function handleError(err) {
 gulp.task('default', gulp.series('patternlab:build'));
 gulp.task('patternlab:watch', gulp.series('patternlab:build', watch));
 gulp.task('patternlab:serve', gulp.series('patternlab:build', 'patternlab:connect', watch));
+gulp.task('patternlab:build', gulp.series('styles', build, 'inline-css'));

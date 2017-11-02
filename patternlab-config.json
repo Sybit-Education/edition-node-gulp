@@ -11,7 +11,9 @@
       "js" : "./source/js",
       "images" : "./source/images",
       "fonts" : "./source/fonts",
-      "css" : "./source/css/"
+      "css" : "./source/css/",
+	  "styleSrc" : "./source/css/sass/**/*.sass",
+	  "styleDest" : "./source/css"
     },
     "public" : {
       "root" : "./public/",
@@ -22,7 +24,9 @@
       "js" : "./public/js",
       "images" : "./public/images",
       "fonts" : "./public/fonts",
-      "css" : "./public/css"
+      "css" : "./public/css",  
+	  "emailSrc" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html",
+	  "emailDest" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation/"
     }
   },
   "styleGuideExcludes": [
@@ -65,5 +69,17 @@
     "rawTemplate": "",
     "markupOnly": ".markup-only"
   },
-  "cleanOutputHtml": true
+  "cleanOutputHtml": true,
+  "smtpInfo": {
+		"auth": {
+		"user": "y.engeser@web.de",
+		"pass": "6SSPQrvAm6"
+	  },
+	  "host": "smtp.web.de",
+
+	  "port": 587
+  },
+  "emailFrom": "Yannick Engeser <y.engeser@web.de>",
+  "emailTo": "yannick.engeser@sybit.de",
+  "emailSubject": "Testmail"
 }
