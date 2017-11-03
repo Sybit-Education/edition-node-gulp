@@ -26,7 +26,7 @@
       "fonts" : "./public/fonts",
       "css" : "./public/css",  
 	  "emailSrc" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html",
-	  "emailDest" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation/"
+	  "emailDest" : "./public/patterns/05-emails-order-order-confirmation/"
     }
   },
   "styleGuideExcludes": [
