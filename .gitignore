@@ -6,4 +6,4 @@ patternlab.json
 Thumbs.db
 .idea/
 public
-patternlab-config.local.json
+*.local.json
