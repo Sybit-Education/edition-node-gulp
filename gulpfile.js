@@ -13,7 +13,6 @@ var gulp = require('gulp'),
   lec = require('gulp-line-ending-corrector'),
   mail = require('gulp-mail'),
   chalk = require('chalk');
-
   
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -93,6 +92,12 @@ gulp.task('pl-copy:styleguide-css', function () {
 //read all paths from our namespaced config file
 var config = require('./patternlab-config.json'),
   patternlab = require('patternlab-node')(config);
+  
+var localConfig = require(paths().authSrc);
+
+function override (){
+	override(config.smtpInfo.auth, credentials, false)
+}
 
 function paths() {
   return config.paths;
@@ -293,24 +298,38 @@ gulp.task('styles', function () {
     .pipe(gulp.dest(path.resolve(paths().source.styleDest)))
 });
 
-
 gulp.task('mail', function () {
+	
+	if(!localConfig || !localConfig.email || !localConfig.password)
+	{
+		handleError("Error: You've to define a local configuration file with 'email' and 'password'!" );
+	}
+	
+	var smtpInfo = {
+	  auth: {
+		user: localConfig.email,
+		pass: localConfig.password
+	  },
+		host: config.smtpInfo.host,
+		port: config.smtpInfo.port
+	};
+	
   return gulp.src(path.resolve(paths().public.emailSrc))
-    .pipe(mail({
+	.pipe(mail({
       subject: config.emailSubject,
       to: [
         config.emailTo
       ],
       from: config.emailFrom,
-      smtp: config.smtpInfo
+      smtp: smtpInfo
     }));
 });
+
 
 function handleError(err) {
   console.log(err.toString());
   process.exit(-1)
 }
-
 
 /******************************************************
  * COMPOUND TASKS
