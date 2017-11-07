@@ -82,5 +82,5 @@
   },
   "emailFrom": "xxx xxx <xxx@xxx.de>",
   "emailTo": "xxx@xxx.de",
-  "emailSubject": "Test E-Mail Template"
+  "emailSubject": "Test@E-Mail.Template"
 }
