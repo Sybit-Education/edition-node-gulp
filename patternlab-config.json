@@ -1,8 +1,5 @@
 {
   "paths" : {
-  
-	"authSrc": "./patternlab-config.local.json",
-  
     "source" : {
       "root": "./source/",
       "patterns" : "./source/_patterns/",
@@ -75,8 +72,8 @@
   "cleanOutputHtml": true,
   "smtpInfo": {
 		"auth": {
-		"email": "xxx",
-		"password": "xxx"
+		"user": "y.engeser@web.de",
+		"pass": "6SSPQrvAm6"
 	  },
 	  "host": "smtp.web.de",
 
@@ -84,5 +81,5 @@
   },
   "emailFrom": "Yannick Engeser <y.engeser@web.de>",
   "emailTo": "yannick.engeser@sybit.de",
-  "emailSubject": "Test"
+  "emailSubject": "Testmail"
 }
