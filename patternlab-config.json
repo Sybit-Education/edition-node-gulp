@@ -26,8 +26,8 @@
       "images" : "./public/images",
       "fonts" : "./public/fonts",
       "css" : "./public/css",  
-	  "emailSrc" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html",
-	  "emailDest" : "./public/patterns/05-emails-order-order-confirmation/"
+	  "emailSrc" : "./public/patterns/05-emails/05-emails.rendered.html",
+	  "emailDest" : "./public/patterns/05-emails/"
     }
   },
   "styleGuideExcludes": [
@@ -76,11 +76,11 @@
 		"email": "xxx",
 		"password": "xxx"
 	  },
-	  "host": "smtp.web.de",
+	  "host": "smtp.xxx.de",
 
 	  "port": 000
   },
-  "emailFrom": "Yannick Engeser <y.engeser@web.de>",
-  "emailTo": "yannick.engeser@sybit.de",
+  "emailFrom": "xxx xxx <xxx@xxx.de>",
+  "emailTo": "xxx@xxx.de",
   "emailSubject": "Test E-Mail Template"
 }
