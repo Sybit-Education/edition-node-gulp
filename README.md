@@ -104,36 +104,58 @@ To install a specific StarterKit from GitHub type:
     
 ## E-Mail Templates
 
-This module could be use for testing out the sending process of own email templates. Furthermore the styles will be written inline.
+This module could be use for testing out the sending process of own email templates. Furthermore the stylesheet will be written inline.
 
 ### Define global and local configurations
 
-Here are some pre-configurations you have to set before sending the created email templates.
-* create a new local configuration file in the project directory with the prefix **.local.json** and fill in the following elements with your personal email credentials: ``username`` and `password`
+Here are some pre-configurations you have to set up before sending the created email templates:
 
-* update the global patternlab configuration file with the replacement of the default values from file destinations, sources and relevant email informations.
+Create a new local configuration file in the project directory with the prefix **.local.json** and fill in the following elements with your personal email credentials: 
 
-> Tip: Most of the default values in the global configurations file are marked up with the placeholder 'xxx'!
+    "username": "xxx"
+    "password": "xxx"
+
+Update the global patternlab configuration file replacing the default values from file destinations, sources and relevant email informations.
+
+    "authSrc": "./xxx.local.json"
+    "styleSrc" : "./source/css/sass/**/*.sass"
+    "styleDest" : "./source/css"
+    "emailSrc" : "./public/patterns/05-emails/05-emails.rendered.html",
+    "emailDest" : "./public/patterns/05-emails/"
+    "host": "smtp.xxx.de",
+    "port": 000
+    "emailFrom": "xxx xxx <xxx@xxx.de>",
+    "emailTo": "xxx@xxx.de",
+    "emailSubject": "Test@E-Mail.Template"
+    
 
 ### Run the build process
 
 The command starts a series of several necessary jobs like generating the css file, the general building of the patterns and finally the inline-css job in the right order. Start the job-series with following command:
 
-`gulp patternlab:build`
+    gulp patternlab:build
 
 ### Sending the email template
 
 After setting up the configurations and the build of the patterns the mail can be send out to your own mail account with the following command:
 
-`gulp mail`
+    gulp mail
 
 
 ### How does it work?
 
 
-1. In the directory _./source/_meta/_ the file _00-head.mustache will be rendered in all html-files. With the variable **#email** the visibility of the stylesheet is managable.
+In the directory _./source/_meta/_ the file **_00-head.mustache** will be rendered in all html-files. With the variable **#email** the visibility of the stylesheet is managable.
 
-2. In the global **package.json** the variable has the value **false**
+	{{# email}}
+	  <link rel="stylesheet" href="../../css/email.css?{{ cacheBuster }}" media="all" />
+	{{/ email}}
 
-3. Only in the specific **email.json** in the source folder of the pattern the value is **true**
+Settings in the global **package.json**
+
+   `"email": false`
+
+Settings in the specific **email.json** (source folder of the email pattern)
+
+   `"email": true`
 
