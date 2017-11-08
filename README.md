@@ -101,3 +101,61 @@ To install a specific StarterKit from GitHub type:
     npm install [starterkit-vendor/starterkit-name]
 
     gulp patternlab:loadstarterkit --kit=[starterkit-name]
+    
+## E-Mail Templates
+
+This module could be use for testing out the sending process of own email templates. Furthermore the stylesheet will be written inline.
+
+### Define global and local configurations
+
+Here are some pre-configurations you have to set up before sending the created email templates:
+
+Create a new local configuration file in the project directory with the prefix **.local.json** and fill in the following elements with your personal email credentials: 
+
+    "username": "xxx"
+    "password": "xxx"
+
+Update the global patternlab configuration file replacing the default values from file destinations, sources and relevant email informations.
+
+    "authSrc": "./xxx.local.json"
+    "styleSrc" : "./source/css/sass/**/*.sass"
+    "styleDest" : "./source/css"
+    "emailSrc" : "./public/patterns/05-emails/05-emails.rendered.html",
+    "emailDest" : "./public/patterns/05-emails/"
+    "host": "smtp.xxx.de",
+    "port": 000
+    "emailFrom": "xxx xxx <xxx@xxx.de>",
+    "emailTo": "xxx@xxx.de",
+    "emailSubject": "Test@E-Mail.Template"
+    
+
+### Run the build process
+
+The command starts a series of several necessary jobs like generating the css file, the general building of the patterns and finally the inline-css job in the right order. Start the job-series with following command:
+
+    gulp patternlab:build
+
+### Sending the email template
+
+After setting up the configurations and the build of the patterns the mail can be send out to your own mail account with the following command:
+
+    gulp mail
+
+
+### How does it work?
+
+
+In the directory _./source/_meta/_ the file **_00-head.mustache** will be rendered in all html-files. With the variable **#email** the visibility of the stylesheet is managable.
+
+	{{# email}}
+	  <link rel="stylesheet" href="../../css/email.css?{{ cacheBuster }}" media="all" />
+	{{/ email}}
+
+Settings in the global **package.json**
+
+   `"email": false`
+
+Settings in the specific **email.json** (source folder of the email pattern)
+
+   `"email": true`
+
