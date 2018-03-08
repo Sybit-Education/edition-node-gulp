@@ -1,5 +1,5 @@
 {
-  "paths" : { 
+  "paths" : {
 	"authSrc": "./patternlab-config.local.json",
     "source" : {
       "root": "./source/",
@@ -25,9 +25,9 @@
       "js" : "./public/js",
       "images" : "./public/images",
       "fonts" : "./public/fonts",
-      "css" : "./public/css",  
-	  "emailSrc" : "./public/patterns/05-emails-order-order-confirmation/05-emails-order-order-confirmation.rendered.html",
-	  "emailDest" : "./public/patterns/05-emails-order-order-confirmation/"
+      "css" : "./public/css",
+	  "emailSrc" : "./public/patterns/05-emails-example-newsletter/*html",
+	  "emailDest" : "./public/patterns/05-emails-example-newsletter/"
     }
   },
   "styleGuideExcludes": [

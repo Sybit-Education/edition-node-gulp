@@ -12,9 +12,10 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   lec = require('gulp-line-ending-corrector'),
   mail = require('gulp-mail'),
+  prm = require('yargs').argv,
   chalk = require('chalk');
 
-  
+
 /**
  * Normalize all paths to be plain, paths with no leading './',
  * relative to the process root, and with backslashes converted to
@@ -93,7 +94,7 @@ gulp.task('pl-copy:styleguide-css', function () {
 //read all paths from our namespaced config file
 var config = require('./patternlab-config.json'),
   patternlab = require('patternlab-node')(config);
-  
+
 var localConfig = require(paths().authSrc);
 
 function override (){
@@ -299,13 +300,26 @@ gulp.task('styles', function () {
     .pipe(gulp.dest(path.resolve(paths().source.styleDest)))
 });
 
+
+
 gulp.task('mail', function () {
-	
+
 	if(!localConfig || !localConfig.email || !localConfig.password)
 	{
-		handleError("Error: You've to define a local configuration file with 'email' and 'password'!" );
+    handleError("Error: You've to define a local configuration file with 'email' and 'password'!" );
 	}
-	
+
+	if(prm.f)
+	{
+    var filename = prm.f;
+  }
+  else
+  {
+    handleError("Error: No argument defined! Please insert arg with -f filename.html" );
+  }
+
+
+
 	var smtpInfo = {
 	  auth: {
 		user: localConfig.email,
@@ -314,8 +328,8 @@ gulp.task('mail', function () {
 		host: config.smtpInfo.host,
 		port: config.smtpInfo.port
 	};
-	
-  return gulp.src(path.resolve(paths().public.emailSrc))
+
+  return gulp.src(path.resolve(paths().public.emailDest + filename))
 	.pipe(mail({
       subject: config.emailSubject,
       to: [
@@ -338,4 +352,4 @@ function handleError(err) {
 gulp.task('default', gulp.series('patternlab:build'));
 gulp.task('patternlab:watch', gulp.series('patternlab:build', watch));
 gulp.task('patternlab:serve', gulp.series('patternlab:build', 'patternlab:connect', watch));
-gulp.task('patternlab:build', gulp.series('styles', build, 'inline-css'));
+gulp.task('sendMail', gulp.series('styles', build, 'inline-css', 'mail'));

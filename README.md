@@ -139,13 +139,14 @@ The command starts a series of several necessary jobs like generating the css fi
 
 After setting up the configurations and the build of the patterns the mail can be send out to your own mail account with the following command:
 
-    gulp mail
+    gulp sendMail
 
 
-### How does it work?
+### Additional Extension
 
+With the following logic you can prevent that a specified style snippet is displayed for all rendered templates (ex. style only for your mail template).
 
-In the directory _./source/_meta/_ the file **_00-head.mustache** will be rendered in all html-files. With the variable **#email** the visibility of the stylesheet is managable.
+In the directory _./source/_meta/_ the file **_00-head.mustache** will be rendered in all html-files. With the variable **#email** the visibility of the stylesheet is managable:
 
 	{{# email}}
 	  <link rel="stylesheet" href="../../css/email.css?{{ cacheBuster }}" media="all" />
